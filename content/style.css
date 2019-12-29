@@ -1,0 +1,161 @@
+﻿@font-face {
+    font-family:myfont;
+    src:url('font/ArbFONTS-GE-SS-Two-Bold.otf')  
+}
+
+@font-face {
+    font-family:myfont2;
+    src:url('font/Droid Arabic Kufi.ttf')  
+}
+
+body{direction: rtl;}
+p {
+    margin: 0 0 10px;
+    color: white;
+}
+th {
+    text-align: right;
+}
+.form-horizontal .control-label {
+    padding-top: 7px;
+    margin-bottom: 0;
+    text-align: right;
+    float: right;
+}
+.dl-horizontal dt {
+    float: right;
+}
+.row{
+    font-family:myfont2;
+}
+.bg-dark {
+    background-color: #0c5c82;
+    border-color:#e7e7e7;
+}
+
+.bg-dark .navbar-nav > li > a {
+    color:#fff;
+    font-family:myfont2
+}
+
+.bg-dark .navbar-nav > li > a:hover {
+    color:#e7e7e7;
+    font-family:myfont2;
+    background-color:#0c5c82;
+}
+
+.jumbotron p {
+    color: #0c5c82;
+}
+
+.navbar-nav > li {
+    float: right;
+}
+
+.nav>li{
+    position:relative;
+    display:block;
+    height: 75px;
+    padding-top: 10px;
+}
+
+.myfooter{
+    background-color:cornflowerblue;
+    padding-top:10px;
+    font-family:myfont2;
+    text-align:justify;
+    margin-bottom: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.myfooter a{
+    color:azure;
+}
+
+.myfooter h3,ul{
+    margin-bottom: 15px;
+    font-family:myfont;
+    list-style-type:none;
+}
+
+.myfooter p{
+    font-family:myfont;
+    color:azure;
+}
+
+.subfooter{
+    background-color:#0c5c82;
+    padding:10px;
+    text-align:center;
+    font-family:myfont2
+}
+
+.logo-size {
+    width:100px;
+    margin-top: -8px;
+}
+
+.navbar-header {
+    float: right;
+}
+
+.item {
+    margin:5px;
+    min-height:380px;
+    float: right;
+}
+.item img {
+    height: 200px;
+}
+.item h3 {
+    margin-top: 10px;
+}
+
+#searchName {
+    width: 150px;
+    border: 2px solid #eee;
+    color:#000000;
+    background-color:white;
+    background-image: url('../images/search.png');
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    padding: 12px 20px 10px 40px;
+    background-position: 10px 15px;
+    transition:width 0.4s ease-in-out;
+}
+#searchName:focus{
+    width:100%;
+}
+
+.nav .open > a, .nav .open > a:focus, .nav .open > a:hover {
+    background-color: none;
+}
+
+.black {
+    color:black !important;
+}
+
+.float-right{
+    float:right !important
+}
+.float-left {
+    float:left !important;
+}
+.img-size{
+    font-size:100px;
+}
+
+.navbar-user {
+    padding:10px;
+    padding-bottom:0px;
+    width:350px;
+}
+
+.jumbotron p {
+    font-size: 19px;
+}
+
+.col-md-3 {
+    width: 23%;
+}

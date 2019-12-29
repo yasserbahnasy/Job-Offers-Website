@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial scale=1" />
+    <title>@ViewBag.Title</title>
+
+    <link href="~/content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/content/style.css" rel="stylesheet" />
+</head>
+<body>
+    <!---NavBar-->
+    <header>
+        
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="/" class="navbar-brand">
+                        <img class="logo-size" src="~/images/logo.png" />
+                    </a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="/">
+                                <i class="glyphicon glyphicon-home"></i>
+                                الرئيسية
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="~/Home/about">
+                                <i class="glyphicon glyphicon-info-sign"></i>
+                                حول الموقع
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="~/Home/contact">
+                                <i class="glyphicon glyphicon-envelope"></i>
+                                إتصل بنا
+                            </a>
+                        </li>
+
+                        <li>
+                            @using (Html.BeginForm("Search", "Home", FormMethod.Post))
+                            { 
+                                <input type="text" name="searchName" id="searchName"  placeholder="أبحث هنا ..."/>
+                            }
+                        </li>
+
+                    </ul>
+
+                    <!--Partial Login-->
+                    @Html.Partial("_login")
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="main">
+        <div class="container">
+            <div class="row" style="min-height: 400px;">
+                @RenderBody()
+            </div>
+        </div>
+    </main>  
+    <!--Footer-->
+    <footer class="navbar navbar-default myfooter">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3><i class="glyphicon glyphicon-question-sign"></i> من نحن؟</h3>
+                    <p>
+                        السلام عليكم موقع التوظيف هو موقع خاص بعرض الوظائف الخالية لمن يريد ويبحث عن وظيفة خالية له في جميع التخصصات والمجالات المختلفة الإخري
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h3><i class="glyphicon glyphicon-globe"></i> روابط هامة</h3>
+                    <ul>
+                        <li><a href="">وظائف متنوعة</a></li>
+                        <li><a href="">وظائف خارج البلاد</a></li>
+                        <li><a href="">وظائف للقطاع الخاص</a></li>
+                        <li><a href="">وظائف للقطاع العام</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4">
+                    <h3><i class="glyphicon glyphicon-envelope"></i> تواصل معنا</h3>
+                    <ul>
+                        <li><a href="">صفحتنا علي الفيسبوك</a></li>
+                        <li><a href="">صفحتنا علي تويتر</a></li>
+                        <li><a href="">شاهدنا علي اليوتيوب</a></li>
+                        <li><a href="">إترك لنا رسالة</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="subfooter">
+            <p>جميع الحقوق محفوظة لموقع التوظيف - 2019</p>
+        </div>
+    </footer> 
+
+    <script src="~/scripts/jquery.min.js"></script>
+    <script src="~/scripts/bootstrap.min.js"></script>
+
+    @RenderSection("scripts",required:false)
+</body>
+</html>

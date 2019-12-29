@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Job_Offers_Website.Models.Job>
+
+@{
+    ViewBag.Title = "قائمة الوظائف";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>قائمة الوظائف</h2>
+
+<p>
+    @Html.ActionLink("إنشاء وظيفة جديدة", "Create")
+</p>
+<table class="table table-stripped table-bordered table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Category.CategoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JobTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JobImage)
+        </th>
+        <th>
+            الأحداث
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category.CategoryName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobTitle)
+        </td>
+        <td>
+            <img src="~/uploads/@Html.DisplayFor(modelItem => item.JobImage)" class="thumbnail" style="margin: auto;width:70px; height:70px" />
+        </td>
+        <td style="text-align: center;padding-top: 30px;">
+            @Html.ActionLink("تعديل", "Edit", new { id=item.id }) |
+            @Html.ActionLink("التفاصيل", "Details", new { id=item.id }) |
+            @Html.ActionLink("حذف", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

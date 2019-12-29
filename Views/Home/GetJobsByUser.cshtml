@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Job_Offers_Website.Models.ApplayForJob>
+
+@{
+    ViewBag.Title = "الوظائف المقدم إليها";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>جميع الوظائف المقدم إليها من طرفكم</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.job.JobTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.message)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApplayDate)
+        </th>
+        <th>الأحداث</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.job.JobTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.message)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApplayDate)
+        </td>
+        <td>
+            @Html.ActionLink("تعديل", "EditOfJob", new { id=item.id }) |
+            @Html.ActionLink("تفاصيل", "DetailsOfJob", new { id=item.id }) |
+            @Html.ActionLink("حذف", "DeleteOfJob", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
